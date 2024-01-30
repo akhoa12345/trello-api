@@ -1,7 +1,6 @@
-### Bộ code base để bắt đầu học khóa MERN Stack Pro (VIẾT CÁC REST API CHUẨN CHỈNH)
-### Base project for my MERN Stack Pro Course - Build Trello App!
+### Base project - Build Trello App!
 
-### Requirements - Thông tin của bộ Code Base này - Chuẩn các phiên bản dưới đây để bắt đầu học: (Semantic Versioning)
+### Requirements - Thông tin của bộ Code Base này - Chuẩn các phiên bản dưới đây: (Semantic Versioning)
 
 ```
 * nodejs = v18.16.0
@@ -22,6 +21,9 @@
 * "babel-plugin-module-resolver": "^5.0.0"
 ```
 
-### About Me - Thông tin về mình:
+### Flow backend
+![Alt text](image.png)
+
+### About Me: 
 
 Author: **Anh Khoa**
