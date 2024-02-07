@@ -6,8 +6,8 @@ import { boardModel } from '~/models/boardModel'
 import ApiError from '~/utils/ApiError'
 
 const createNew = async (reqBody) => {
-  // eslint-disable-next-line no-useless-catch
   try {
+    // Xử lí logic dữ liệu tùy đặc thù dự án
     const newBoard = {
       ...reqBody,
       slug: slugify(reqBody.title)
@@ -16,6 +16,7 @@ const createNew = async (reqBody) => {
     // Gọi tới tầng Model để xử lí lưu bản ghi newBoard vào trong Database
     const createdBoard = await boardModel.createNew(newBoard)
 
+    // Lấy bản ghi board sau khi gọi (tùy mục đích dự án mà có cần bước này hay không)
     const getNewBoard = await boardModel.findOneById(createdBoard.insertedId)
 
     // Làm thêm các xử lí logic khác với các Collection khác tùy đặc thù dự án ...vv
@@ -28,7 +29,6 @@ const createNew = async (reqBody) => {
   }
 }
 const getDetails = async (boardId) => {
-  // eslint-disable-next-line no-useless-catch
   try {
     const board = await boardModel.getDetails(boardId)
     if (!board) {
