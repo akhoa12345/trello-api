@@ -1,4 +1,5 @@
 import { cardModel } from '~/models/cardModel'
+import { columnModel } from '~/models/columnModel'
 
 const createNew = async (reqBody) => {
   try {
@@ -11,7 +12,10 @@ const createNew = async (reqBody) => {
     // Lấy bản ghi card sau khi gọi (tùy mục đích dự án mà có cần bước này hay không)
     const getNewCard = await cardModel.findOneById(createdCard.insertedId)
 
-    // ...
+    if (getNewCard) {
+      // Cập nhật mảng cardOrderIds trong collection columns
+      await columnModel.pushCardOrderIds(getNewCard)
+    }
 
     // Trả kết quả về, trong Service luôn phải có return
     return getNewCard
