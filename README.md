@@ -21,9 +21,6 @@
 * "babel-plugin-module-resolver": "^5.0.0"
 ```
 
-### Flow backend
-![Alt text](image.png)
-
 ### About Me: 
 
 Author: **Anh Khoa**
